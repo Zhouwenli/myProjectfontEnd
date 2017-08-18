@@ -1,0 +1,229 @@
+#head-top{
+	width: 7.2rem;
+	margin: 0 auto;
+	position: relative;
+}
+.swiper-container{
+	/*width: 18rem*/
+	width: 100%;
+	height: 3.2rem;
+	
+}
+.imgsilider{
+	width: 7.2rem;
+	height: 3.2rem;
+}
+.pagination {
+  position: absolute;
+  left: 0;
+  text-align: center;
+  bottom:0.31rem;
+  width: 100%;
+  z-index: 111;
+}
+.swiper-pagination-switch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #fff;
+  /*box-shadow: 0px 1px 2px #555 inset;*/
+  margin: 0 5px;
+  cursor: pointer;
+}
+.swiper-active-switch {
+  background: #4971f4;
+}
+.raduis-h{
+	position: absolute;
+    width: 7.2rem;
+    height: 0.4rem;
+    background-image: url(../img/zhiboHbar.png);
+    background-size: cover;
+    bottom: -0.2rem;
+    z-index: 111;
+}
+#content{
+	width: 7.2rem;
+	height: 3.8rem;
+	background-color: #fff;
+	margin:0 auto;
+	padding-top: 0.1rem;
+	
+}
+#content h3{
+	width: 7.2rem;
+	margin: 0.3rem auto;
+	text-align: center;
+	color: #333;
+}
+.content-bar{
+	width: 6.58rem;
+	height: 2.6rem;
+	margin: 0 auto;
+	border: 1px solid #f0f0f0;
+}
+.swiper-containerBar{
+	border-bottom: 1px dashed #e4e4e4;
+}
+.showBar{
+	width: 6.58rem;
+	height: 1.3rem;
+	
+	
+	overflow: hidden;
+}
+.showBar .left-img,.showBar .left-img1{
+	width:0.8rem ;
+	height: 0.78rem;
+	
+	border-right: 1px solid #e4e4e4 ;
+	padding: 0 0.36rem;
+	margin: 0.26rem auto;
+	float: left;
+	/*box-sizing: border-box;*/
+}
+
+.showBar .left-img img{
+	width:0.8rem ;
+	height: 0.78rem;
+}
+.showBar .left-img1 img{
+	width:0.8rem ;
+	margin: 0.2rem auto;
+	/*height: 0.78rem;*/
+}
+.showBar .right-word,.showBar .right-word1{
+	width: 5rem;
+	height: 1.3rem;
+	float: left;
+}
+.showBar .right-word1{
+	line-height: 1.5rem;
+}
+.showBar .right-word1 p{
+	padding-top: 0.45rem;
+	padding-left: 0.3rem;
+	color: #333;
+	font-size: 0.28rem;
+	line-height: 0.4rem;
+	white-space: normal;
+}
+.showBar .right-word pre{
+	padding-top: 0.26rem;
+	padding-left: 0.3rem;
+	color: #333;
+	font-size: 0.28rem;
+	line-height: 0.4rem;
+	white-space: normal;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+.showBar .right-word .hot,.showBar .right-word1 .hot{
+	width: 0.7rem;
+	height: 0.36rem;
+	display: inline-block;
+	margin-right: 0.1rem;
+	background-color: #2b9ced ;
+	color: #fff;
+	text-align: center;
+	line-height: 0.36rem;
+	font-size: 0.24rem;
+	
+}
+.hot-ms{
+	height: 0.36rem;
+	line-height: 0.36rem;
+	display: inline-block;
+}
+.showBar .right-word1 .hot{
+	width: 0.7rem;
+	height: 0.36rem;
+	display: inline-block;
+	margin-right: 0.1rem;
+	background-color: #ab8353;
+	color: #fff;
+	text-align: center;
+	line-height: 0.36rem;
+	font-size: 0.24rem;
+	
+}
+#hot-shop{
+	width: 7.2rem;
+	height: 1rem;
+	margin: 0 auto;
+	
+	
+	
+}
+#hot-shop h3{
+	width: 2.5rem;
+	display: inline-block;
+	text-align: center;
+	margin-top: 0.4rem;
+	font-size: 0.32rem;
+	color: #333;
+	
+}
+#hot-shop hr{
+	width: 2rem;
+    display: inline-block;
+    height: 1px;
+    background-color: #e4e4e4;
+    border: none;
+	
+}
+#hot-shop1{
+	width: 7.2rem;
+	height: 0.8rem;
+	
+}
+#bar-img{
+	width: 7.2rem;
+	height: 0.8rem;
+	
+
+}
+.rhr{
+	margin-left: 0.3rem;
+}
+.lhr{
+	margin-right: 0.3rem;
+}
+#shopList{
+	width: 7.2rem;
+	margin: 0 auto;
+}
+#shopList ul{
+	width: 7.2rem;
+	margin: 0 auto;
+}
+#shopList ul li{
+	width: 3.5rem;
+	height: 4.5rem;
+	background-color: #fff;
+	margin: 0.06rem 0rem 0 0.06rem;
+	float: left;
+}
+#shopList ul li img{
+	width: 3.5rem;
+	height: 3.58rem;
+	display: inline-block;
+}
+#shopList ul li .shopName{
+	font-size: 0.24rem;
+    color: #666;
+    padding: 0.1rem 0.23rem;
+    line-height: 0.4rem;
+   display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+#shopList ul li .shopPrice{
+	font-size: 0.24rem;
+	color: #e33333;
+	padding: 0.1rem 0.23rem;
+}

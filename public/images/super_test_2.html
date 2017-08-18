@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no" />
+		<link href="css/common_klaus.css" rel="stylesheet" />
+		<link href="css/live-group.css" rel="stylesheet" />
+		<script src="js/lib/ydui.flexible.js"></script>
+		<title></title>
+		<style>
+			.arrow {
+				width: 0;
+				height: 0;
+				font-size: 0;
+				border: solid 10px;
+				border-color: #f00 #0f0 #00f #000;
+				transform: translate(0,-50%);
+			}
+			
+			body {
+				background: #F5F5F5;
+			}
+			
+			.converse {
+				min-height: 1rem;
+				width: 100%;
+			}
+			
+			.converse.left {}
+			
+			.converse.right {
+				flex-direction: row-reverse;
+			}
+			
+			.converse.right .avatar {
+				transform: rotateY(180deg);
+			}
+			
+			.avatar {
+				margin: 0 .35rem;
+			}
+			
+			.avatar img {
+				width: .6rem;
+				height: .6rem;
+			}
+			
+			.converse.left .send {
+				position: relative;
+				min-width: .8rem;
+				max-width: 3.6rem;
+				min-height: .3rem;			
+				background: #FFFFFF;
+				border-radius: .05rem;
+				padding: .15rem .3rem;
+				line-height: 1.2;
+				/* 圆角 */
+			}
+			
+			.converse.right .send {
+				position: relative;
+				min-width: .8rem;
+				max-width: 3.6rem;
+				min-height: .3rem;
+				background: #9EEA6A;
+				border-radius: .05rem;
+				padding: .15rem .3rem;
+				line-height: 1.2;
+				
+				/* 圆角 */
+			}
+			
+			.converse.left .send .arrow {
+				position: absolute;
+				top: 50%;
+				left: -16px;
+				/* 圆角的位置需要细心调试哦 */
+				width: 0;
+				height: 0;
+				font-size: 0;
+				border: solid 8px;
+				border-color: #F5F5F5 #FFFFFF #F5F5F5 #F5F5F5;
+			}
+			
+			.converse.right .send .arrow {
+				position: absolute;
+				top: 50%;
+				right: -16px;
+				/* 圆角的位置需要细心调试哦 */
+				width: 0;
+				height: 0;
+				font-size: 0;
+				border: solid 8px;
+				border-color: #F5F5F5 #F5F5F5 #F5F5F5 #9EEA6A;
+			}
+			
+			.send span {
+				font-size: .26rem;
+			}
+		</style>
+	</head>
+
+	<body class="live-group">
+		<!--<div style="width:7.2rem;height:3rem;background-color:#000;">test</div>-->
+
+		<div class="main flex-v flex-hc-vc">
+			<div class="converse flex-hl-vc left">
+				<div class="avatar">
+					<img src="img/ic-avatar.png">
+				</div>
+				<div class="send flex-hl-vc">
+					<div class="arrow "></div>
+					<span>在不在呀</span>
+				</div>
+			</div>
+			<div class="converse flex-hl-vc right">
+				<div class="avatar" style="">
+					<img src="img/ic-avatar.png">
+				</div>
+				<div class="send flex-hr-vc">
+					<div class="arrow"></div>
+					<span>你猜</span>
+				</div>
+			</div>
+			<div class="converse flex-hl-vc left">
+				<div class="avatar">
+					<img src="img/ic-avatar.png">
+				</div>
+				<div class="send flex-hl-vc">
+					<div class="arrow"></div>
+					<span>来一局呀，王者一日游</span>
+
+				</div>
+			</div>
+			<div class="converse flex-hl-vc right">
+				<div class="avatar" style="">
+					<img src="img/ic-avatar.png">
+				</div>
+				<div class="send flex-hr-vc">
+					<div class="arrow"></div>
+					<span>我很渣的</span>
+				</div>
+			</div>
+
+			<div class="converse flex-hl-vc left">
+				<div class="avatar">
+					<img src="img/ic-avatar.png">
+				</div>
+				<div class="send flex-hl-vc">
+					<div class="arrow"></div>
+					<span>没事，我也是渣渣</span>
+
+				</div>
+			</div>
+			<div class="converse flex-hl-vc left">
+				<div class="avatar">
+					<img src="img/ic-avatar.png">
+				</div>
+				<div class="send flex-hl-vc">
+					<div class="arrow"></div>
+					<span>给我吟一首诗</span>
+
+				</div>
+			</div>
+			<div class="converse flex-hl-vc right">
+				<div class="avatar">
+					<img src="img/ic-avatar.png">
+				</div>
+				<div class="send flex-hl-vc">
+					<div class="arrow"></div>
+					<span>蒹葭苍苍，白露为霜。所谓伊人，在水一方，溯洄从之，道阻且长。溯游从之，宛在水中央。蒹葭萋萋，白露未晞。所谓伊人，在水之湄。溯洄从之，道阻且跻。溯游从之，宛在水中坻。蒹葭采采，白露未已。所谓伊人，在水之涘。溯洄从之，道阻且右。溯游从之，宛在水中沚。</span>
+
+				</div>
+			</div>
+			<div class="converse flex-hl-vc left">
+				<div class="avatar">
+					<img src="img/ic-avatar.png">
+				</div>
+				<div class="send flex-hl-vc">
+					<div class="arrow"></div>
+					<span>算你牛逼</span>
+					
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+	<script src="js/lib/share.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/lib/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+
+	<script type="text/javascript">
+	</script>
+
+</html>
