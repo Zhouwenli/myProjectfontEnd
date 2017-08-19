@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<script src="util.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="dist/idangerous.swiper.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<title>首页</title>
+	</head>
+	<body>
+		<header id="head-top">
+			<div class="swiper-container">
+		      <div class="swiper-wrapper">
+		        <div class="swiper-slide"> <img class="imgsilider" src="images/lunbo1.jpg"> </div>
+		        <div class="swiper-slide"> <img class="imgsilider" src="images/lunbo2.jpg"> </div>
+		        <div class="swiper-slide"> <img class="imgsilider" src="images/lunbo3.jpg"> </div>
+		        <div class="swiper-slide"> <img class="imgsilider" src="images/lunbo4.jpg"> </div>
+		       
+		      </div>
+		    </div>
+		    <div class="pagination"></div>
+		    <div class="raduis-h">
+		    	
+		    </div>
+		</header>
+		<div id="content">
+			
+			<h3>最新动态</h3>
+			<div class="content-bar">
+				<div class="swiper-containerBar showBar">
+			      <div class="swiper-wrapper">
+			        <div class="swiper-slide">
+			        	<div class="left-img">
+			        		<img src="images/zhiboHot.png"/>
+			        	</div>
+			        	<div class="right-word">
+			        	    <pre><span class="hot">热点</span>环游购现推出购买自营商品即买自营商品即送优惠券活动送送送送送送送送送...</pre>	
+			        	</div>
+			        </div>
+			        <div class="swiper-slide">
+			        	<div class="left-img">
+			        		<img src="images/zhiboHot.png"/>
+			        	</div>
+			        	<div class="right-word">
+			        	    <pre><span class="hot">快点</span>环游购现推出购买自营商品即送优惠券活动送送送送送送送送送...</pre>	
+			        	</div>
+			        </div>
+			        
+			       
+			      </div>
+			    </div>
+			    <div class=" showBar">
+			      <div class="swiper-wrapper">
+			        <div class="swiper-slide">
+			        	<div class="left-img1">
+			        		<img src="images/zhiboUpdate.png"/>
+			        	</div>
+			        	<div class="right-word1">
+			        	    <p><span class="hot">更新</span><span class="hot-ms">环游购App更新啦！</span></pre>	
+			        	</div>
+			        </div>
+			      </div>
+			    </div>
+			</div>	
+		</div>
+		<div class="clear">
+			
+		</div>
+		<div id="hot-shop">
+			<hr class="rhr" /><h3>热销商品</h3><hr class="lhr" />
+			
+		</div>
+		<div id="hot-shop1">
+			<img id="bar-img" src="images/zhiboBar.png"/>
+			
+		</div>
+		
+		<div id="shopList">
+			<ul>
+				
+				<li><img src="images/shopList1.jpg" alt="" /><p class="shopName">哈哈哈哈</p></li>
+				
+				
+			</ul>
+		</div>
+		
+		
+		<script src="jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="dist/idangerous.swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="index.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$.ajax({
+				url: "/zwl",
+				type: "POST",
+				data: {
+					data:""
+				},	
+				success: function(json){
+					console.log(json.length);
+					console.log(json[0]);
+					var liList='';
+					for(var i=0;i<json.length;i++){
+						liList+='<li><img src="images/'+json[i].img+'" alt="" /><p class="shopName">'+json[i].shopName+'</p></li>';
+					}
+					$("#shopList ul").append(liList);
+					
+					
+				}
+			});	
+		</script>
+		
+	</body>
+</html>
