@@ -8,6 +8,9 @@ var ejs = require('ejs');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+//文件上传
+var upload = require('./routes/upload');  
+ 
 
 //添加的
 var session=require('express-session');
@@ -24,6 +27,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+//文件上传
+//app.use(bodyParser({ uploadDir: "./public/upload" }));  
+
 //添加会话中间件
 app.use(cookieParser("An"));
 
@@ -38,6 +44,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 //app.use('/users', users);
 app.post('/zwl',users.zwl);
+//文件上传
+app.post('/upload', upload.upload); 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

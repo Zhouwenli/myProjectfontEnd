@@ -1,0 +1,16 @@
+body{
+	background-color: #fff;
+}
+.titleP{
+	color: #8A98FC;
+	font-size: 0.36rem;
+}
+.uploadBts{
+	width: 7.2rem;
+	height: 1rem;
+}
+input{
+	width: 3rem;
+	height: 1rem;
+	font-size: 0.28rem;
+}
