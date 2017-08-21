@@ -4,8 +4,6 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="css/common.css"/>
 		<script src="util.js" type="text/javascript" charset="utf-8"></script>
-		<link href="css/iconfont.css" rel="stylesheet" type="text/css"/>
-        <link href="css/fileUpload.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" type="text/css" href="css/upLoad.css"/>
 		
 		<title>图片上传</title>
@@ -13,139 +11,11 @@
 	<body>
 		<p class="titleP">hi,木鱼请选择你要上传的图片</p>
 		<form action="/upload" method="post" enctype="multipart/form-data" >
-		    <input type="file" name="pic" >
-		    <input type="submit">
+		    <input class="chooseImg" type="file" name="pic" >
+		    <input class="submitImg" type="submit">
 		
 		</form>
 		
-		<!--<input type="file" id="file" onchange="onselectimage()" style="filter:alpha(opacity=0);opacity:0;width:100%;height:100%;"/>--> 
-		 <!--<div id="fileUploadContent" class="fileUploadContent">-->
-        <!--<div class="uploadBts">
-            <div>
-                <div class="selectFileBt">选择文件</div>
-            </div>
-            <div>
-            <i class="iconfont icon-shangchuan"></i>
-            </div>
-        </div>
-        <div class="subberProgress">
-            <div class="progress">
-                <div>30%</div>
-            </div>
-        </div>
-        <div class="box">
-            <div class="fileItem">
-                <div class="imgShow">
-                    <div class="fileType">txt</div>
-                    <i class="iconfont icon-wenjian"></i>
-                </div>
-                <div class="progress">
-                    <div class="progress_inner error"></div>
-                </div>
-                <div class="status">
-                    <i class="iconfont icon-shanchu"></i>
-                </div>
-                <div class="fileName">
-                   qwertyuiopasdfghjklzxcvbnm.jpg
-                </div>
-            </div>
-            <div class="fileItem">
-                <div class="imgShow">
-                    <div class="fileType">jpg</div>
-                    <i class="iconfont icon-wenjian"></i>
-                </div>
-                <div class="progress">
-                    <div class="progress_inner error"></div>
-                </div>
-                <div class="status">
-                    <i class="iconfont icon-shanchu"></i>
-                </div>
-                <div class="fileName">
-                    qwertyuiopasdfghjklzxcvbnm.jpg
-                </div>
-            </div>
-            <div class="fileItem">
-                <div class="imgShow">
-                    <img src="404bg.jpg"/>
-                </div>
-                <div class="progress">
-                    <div class="progress_inner error"></div>
-                </div>
-                <div class="status">
-                    <i class="iconfont icon-shanchu"></i>
-                </div>
-                <div class="fileName">
-                    qwertyuiopasdfghjklzxcvbnm.jpg
-                </div>
-            </div>
-
-        </div>-->
-
-    <!--</div>-->
- <!--<script src="jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>-->
-<!--//-->  <!--<script type="text/javascript" src="fileUpload.js"></script>-->
-	 <!--<script type="text/javascript">-->
-<!--//  $("#fileUploadContent").initUpload({
-//      "uploadUrl":"upload",//上传文件信息地址
-//      "progressUrl":"#",//获取进度信息地址，可选，注意需要返回的data格式如下（{bytesRead: 102516060, contentLength: 102516060, items: 1, percent: 100, startTime: 1489223136317, useTime: 2767}）
-//      //"showSummerProgress":false,//总进度条，默认限制
-//      //"size":350,//文件大小限制，单位kb,默认不限制
-//     // "maxFileNumber":3,//文件个数限制，为整数
-//      //"filelSavePath":"",//文件上传地址，后台设置的根目录
-//      //"beforeUpload":beforeUploadFun,//在上传前执行的函数
-//      //"onUpload":onUploadFun，//在上传后执行的函数
-//      //autoCommit:true,//文件是否自动上传
-//      //"fileType":['png','jpg','docx','doc']//文件类型限制，默认不限制，注意写的是文件后缀
-//  })
-//  function beforeUploadFun(opt){
-//      opt.otherData =[{"name":"你要上传的参数","value":"你要上传的值"}];
-//  }
-//  function onUploadFun(opt,data){
-//      alert(data);
-//      uploadTools.uploadError(opt);//显示上传错误
-//  }-->
-
-<!--//选择文件之后直接上传-->  
-<!--function onselectimage() {  
-    var xmlHttpReq = null;  
-    //IE浏览器使用ActiveX  
-    if (window.ActiveXObject) {  
-        xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");  
-    }  
-    //其它浏览器使用window的子对象XMLHttpRequest  
-    else if (window.XMLHttpRequest) {  
-        xmlHttpReq = new XMLHttpRequest();  
-    }  
-    var filenode = document.getElementById("file");  
-  
-  
-    if (xmlHttpReq != null) {  
-        //设置回调，当请求的状态发生变化时，就会被调用  
-        xmlHttpReq.onreadystatechange = function () {  
-            //等待上传结果  
-            if (xmlHttpReq.readyState == 1) {  
-//              filenode.parentNode.style.backgroundImage = "url('/images/bigloader.gif')";  
-            }  
-            //上传成功，返回的文件名，设置到div的背景中  
-            if (xmlHttpReq.readyState == 4 && xmlHttpReq.status == 200) {  
-                filenode.parentNode.style.backgroundImage = "url('/upload/" + xmlHttpReq.responseText + "')";  
-            }  
-        }  
-        //构造form数据  
-        var form = new FormData();  
-        form.append("file", filenode.files[0]);  
-  
-  
-        //设置请求（没有真正打开），true：表示异步  
-        xmlHttpReq.open("POST", "/upload", true);  
-        //不要缓存  
-        //xmlHttpReq.setRequestHeader("If-Modified-Since", "0");  
-        //提交请求  
-        xmlHttpReq.send(form);  
-        //清除掉，否则下一次选择同样的文件就进入不到onchange函数中了  
-        filenode.value = null;  
-    }  
-}  
-</script>-->
+	
 	</body>
 </html>
