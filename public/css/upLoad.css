@@ -9,12 +9,19 @@ form{
 	height: 3rem;
 	margin: 0 auto;
 	padding-top: 1rem;
+	border: 1px dashed #E185AF;
 }
 .chooseImg{
 	height: 0.75rem;
 	font-size: 0.32rem;
 }
 .submitImg{
-	height: 0.75rem;
+	margin-top: 1rem;
+	width: 1rem;
+	height: 0.5rem;
 	font-size: 0.32rem;
+}
+.img_wrap{
+	width: 5rem;
+	
 }
