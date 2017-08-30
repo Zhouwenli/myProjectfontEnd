@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>接口测试平台</title>
+</head>
+<body>
+<style>
+* {
+  font-family: 'Trebuchet MS';
+  outline: none;
+}
+body {
+  margin: 0;
+}
+h1 {
+  -webkit-user-select: none;
+  padding: 0.5em 20%;
+  background-color: rgba(140, 140, 140, .8);
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  white-space: nowrap;
+  cursor: default;
+}
+h1::after {
+  content: '(可自选地址进行测试)';
+  font-size: .5em;
+  margin-left: 1em;
+}
+.div{
+	width: 100%;
+	float:left;
+	padding:60px 0 0 0;
+}
+input{
+	border-radius: 5px;
+	border: 2px solid #999999;
+	padding: 3px 0 3px 0px;
+}
+input:hover{
+	border: 2px solid red;
+	padding: 3px 0 3px 0px;
+}
+input:focus{
+	border: 2px solid red;
+	padding: 3px 0 3px 0px;
+	outline:none
+}
+textarea{
+	border-radius: 5px;
+	border: 2px solid #999999;
+}
+textarea:hover{
+	border: 2px solid red;
+}
+textarea:focus{
+	border: 2px solid red;
+	outline:none
+}
+#neirong{
+	float: left;
+	padding-left:5px;
+	width: 30%;
+}
+#shuchu{
+	float: right;
+	padding-right:10px;
+	width: 66%;
+}
+#new{	
+	color: brown;
+	font-weight: bold;
+	padding: 3px 0 3px 0px;
+}
+#address{	
+	color: brown;
+	font-weight: bold;
+	padding: 3px 0 3px 0px;
+}
+#adds{
+	width: 100%;
+}
+#afunc{	
+	color: brown;
+	font-weight: bold;
+	padding: 3px 0 3px 0px;
+}
+#url{
+	width: 100%;
+}
+#func{
+	width: 100%;
+}
+.btn{
+	padding: 10px 0;
+	border: 2px solid black;
+	width: 100px;
+	background: #fff;
+}
+.btn:hover{
+	padding: 10px 0;
+	border: 2px solid orangered;
+	width: 100px;
+	background: orangered;
+	color: white;
+}
+.btn:focus{
+	padding: 10px;
+	border: 2px solid orangered;
+	width: 100px;
+	background: orangered;
+	color: white;
+}
+iframe{
+	width: 100%;
+	height:600px;
+	border: 2px solid #999999;
+	color: red;
+	border-radius: 5px;
+}
+#iframe{
+	width: 100%;
+	height: 600px;
+	border: 2px solid #999999;
+	padding: 5px 0 0 0;
+	color: red;
+	border-radius: 5px;
+}
+#son_con{
+	width: 100%;
+	height:435px;
+}
+#content{
+	width:150px;
+	height:100px;
+	display:none;
+}
+</style>
+
+
+<h1>支付宝回调测试</h1>
+<div class="div">
+
+
+<br>
+
+<div id="neirong">
+<div id="address">请求地址:</div>
+<input id="url" type="text" value="http://zyktest.zyk-hlk.com:9090/pay/alipay/chongzhi">
+
+<input id="discount" type="text" value="0.00">
+<input id="payment_type" type="text" value="1">
+<input id="subject" type="text" value="积分充值">
+<input id="trade_no" type="text" value="2017022821001004620216980047">
+<input id="buyer_email" type="text" value="15817319768">
+<input id="gmt_create" type="text" value="2017-02-28 14:07:13">
+<input id="notify_type" type="text" value="trade_status_sync">
+<input id="quantity" type="text" value="1">
+<input id="out_trade_no" type="text" value="15817319768_20170228140642">
+<input id="seller_id" type="text" value="2088521599218220">
+<input id="notify_time" type="text" value="2017-02-28 14:07:14">
+<input id="body" type="text" value="c195071664bf7b715ff4e22e7952f5cefa8940bff11152ee262db1d7dec7c50d">
+<input id="trade_status" type="text" value="TRADE_SUCCESS">
+<input id="is_total_fee_adjust" type="text" value="N">
+<input id="total_fee" type="text" value="0.01">
+<input id="gmt_payment" type="text" value="2017-02-28 14:07:14">
+<input id="seller_email" type="text" value="link@abcaaa.top">
+<input id="price" type="text" value="0.01">
+<input id="buyer_id" type="text" value="2088302501230622">
+<input id="notify_id" type="text" value="905a8c6c9beaefd9b0a3c874321513eksa">
+<input id="use_coupon" type="text" value="N">
+<input id="sign_type" type="text" value="h7/jnp8STHo59A2BC1hkFgQjqhhT7LLzwxQXSzb6bd6mbv86zYqM/sqS2nPKvuemsNDnIn7c1dbLdpL1thsc1+hYCY1mlxUm/XadxKTAWbGEkvKBGAeQoJQXyVFLdpmkKoZYtU+hcc9IkDQgHoNZ2r9Of/PVVhbAP4K2b8zqUqU=">
+
+
+<textarea name="content" id="content"></textarea><br />
+<input type="button" class="btn" name="" onClick="su()" value="提交" />
+</div>
+
+	
+<div id="shuchu">
+<div id="new">
+	输出结果：
+</div>
+<div src="" name="iframe" id="iframe"></div>
+</div>
+</div>
+
+<script src="./js/jquery-1.10.2.min.js"></script>
+<script>
+
+var share = require("./views/js/share.js");
+
+
+function su(){
+	var url = $("#url").val();
+	var func = "alipay";
+  var discount = $("#discount").val();
+  var payment_type = $("#payment_type").val();
+  var subject = $("#subject").val();
+  var trade_no = $("#trade_no").val();
+  var buyer_email = $("#buyer_email").val();
+  var gmt_create = $("#gmt_create").val();
+  var notify_type = $("#notify_type").val();
+  var quantity = $("#quantity").val();
+  var out_trade_no = $("#out_trade_no").val();
+  var seller_id = $("#seller_id").val();
+  var notify_time = $("#notify_time").val();
+  var body = $("#body").val();
+  var trade_status = $("#trade_status").val();
+  var is_total_fee_adjust = $("#is_total_fee_adjust").val();
+  var total_fee = $("#total_fee").val();
+  var gmt_payment = $("#gmt_payment").val();
+  var seller_email = $("#seller_email").val();
+  var price = $("#price").val();
+  var buyer_id = $("#buyer_id").val();
+  var notify_id = $("#notify_id").val();
+  var use_coupon = $("#use_coupon").val();
+  var sign_type = $("#sign_type").val();
+  
+  var data = {};
+  
+  data.discount = discount;
+  data.payment_type = payment_type;
+  data.subject = subject;
+  data.trade_no = trade_no;
+  data.buyer_email = buyer_email;
+  data.gmt_create = gmt_create;
+  data.notify_type = notify_type; 
+  data.quantity = quantity;
+  data.out_trade_no = out_trade_no;
+  data.seller_id = seller_id;
+  data.notify_time = notify_time;
+  data.body = body;
+  data.trade_status = trade_status;
+  data.is_total_fee_adjust = is_total_fee_adjust;
+  data.total_fee = total_fee;
+  data.gmt_payment = gmt_payment;
+  data.seller_email = seller_email;
+  data.price = price;
+  data.buyer_id = buyer_id;
+  data.notify_id = notify_id;
+  data.use_coupon = use_coupon;
+  data.sign_type = sign_type;
+  
+ 
+  localStorage.setItem("url",url);
+  share.form_alipay(url,data,function(result){
+	   if(result._f == "成功"){
+          $("#iframe").html(result.内容);
+	   }
+       else{
+		  $("#iframe").html("请求内容失败"); 
+	   }
+  });
+
+}
+
+
+
+</script>
+
+
+</body>
+</html>

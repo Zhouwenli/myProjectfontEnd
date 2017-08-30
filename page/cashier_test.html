@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>接口测试平台</title>
+</head>
+<body>
+<style>
+* {
+  font-family: 'Trebuchet MS';
+  outline: none;
+}
+body {
+  margin: 0;
+}
+h1 {
+  -webkit-user-select: none;
+  padding: 0.5em 20%;
+  background-color: rgba(140, 140, 140, .8);
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  white-space: nowrap;
+  cursor: default;
+}
+h1::after {
+  content: '(可自选地址进行测试)';
+  font-size: .5em;
+  margin-left: 1em;
+}
+.div{
+	width: 100%;
+	float:left;
+	padding:60px 0 0 0;
+}
+input{
+	border-radius: 5px;
+	border: 2px solid #999999;
+	padding: 3px 0 3px 0px;
+}
+input:hover{
+	border: 2px solid red;
+	padding: 3px 0 3px 0px;
+}
+input:focus{
+	border: 2px solid red;
+	padding: 3px 0 3px 0px;
+	outline:none
+}
+textarea{
+	border-radius: 5px;
+	border: 2px solid #999999;
+}
+textarea:hover{
+	border: 2px solid red;
+}
+textarea:focus{
+	border: 2px solid red;
+	outline:none
+}
+#neirong{
+	float: left;
+	padding-left:5px;
+	width: 30%;
+}
+#shuchu{
+	float: right;
+	padding-right:10px;
+	width: 66%;
+}
+#new{	
+	color: brown;
+	font-weight: bold;
+	padding: 3px 0 3px 0px;
+}
+#address{	
+	color: brown;
+	font-weight: bold;
+	padding: 3px 0 3px 0px;
+}
+#adds{
+	width: 100%;
+}
+#afunc{	
+	color: brown;
+	font-weight: bold;
+	padding: 3px 0 3px 0px;
+}
+#url{
+	width: 100%;
+}
+#func{
+	width: 100%;
+}
+.btn{
+	padding: 10px 0;
+	border: 2px solid black;
+	width: 100px;
+	background: #fff;
+}
+.btn:hover{
+	padding: 10px 0;
+	border: 2px solid orangered;
+	width: 100px;
+	background: orangered;
+	color: white;
+}
+.btn:focus{
+	padding: 10px;
+	border: 2px solid orangered;
+	width: 100px;
+	background: orangered;
+	color: white;
+}
+iframe{
+	width: 100%;
+	height:600px;
+	border: 2px solid #999999;
+	color: red;
+	border-radius: 5px;
+}
+#iframe{
+	width: 100%;
+	height: 600px;
+	border: 2px solid #999999;
+	padding: 5px 0 0 0;
+	color: red;
+	border-radius: 5px;
+}
+#son_con{
+	width: 100%;
+	height:435px;
+}
+#content{
+	width:150px;
+	height:100px;
+	display:none;
+}
+</style>
+
+
+<h1>收银台测试</h1>
+<div class="div">
+
+
+<br>
+
+<div id="neirong">
+<div id="address">请求地址:</div>
+<input id="url" type="text" value="http://zyktest.zyk-hlk.com:9090/pay.post">
+<div id="afunc">func:</div>
+<input id="func" type="text" value="cashier">
+<div id="new">提交内容:</div>
+
+<textarea id="son_con">
+账号=15817319768
+随机码=50f28f125397c56480795a89f282280b
+手机ID=123123
+手机名称=112312323
+手机型号=231123
+type=chongzhi
+id=2242
+密码=1233
+支付方式=微信支付</textarea><br />
+<textarea name="content" id="content"></textarea><br />
+<input type="button" class="btn" name="" onClick="su()" value="提交" />
+</div>
+
+	
+<div id="shuchu">
+<div id="new">
+	输出结果：
+</div>
+<div src="" name="iframe" id="iframe"></div>
+</div>
+</div>
+
+<script src="./js/jquery-1.10.2.min.js"></script>
+<script>
+
+var share = require("./views/js/share.js");
+
+function  iffrom(con){
+	var reg=new RegExp("\n","g");
+	var newstr=con.replace(reg,'","');   
+	reg=new RegExp("=","g");
+	newstr=newstr.replace(reg,'":"');
+	newstr='{"'+newstr+'"}';
+	return newstr;
+}
+
+function su(){
+  var url = $("#url").val();
+  var func = $("#func").val();
+  var text = $("#son_con").val();
+  
+  if(url == ''){
+	alert("请填写地址");
+	$("#url").focus();
+	return false;
+  }
+  if(func == ''){
+	alert("请填写func");
+	$("#func").focus();
+	return false;
+  }
+  if(text == ''){
+	alert("请填写内容");
+	$("#text").focus();
+	return false;
+  }
+  share.form_su(url,iffrom(text),func,function(result){
+	   if(result._f == "成功"){
+          $("#iframe").html(result.内容);
+	   }
+       else{
+		  $("#iframe").html("请求内容失败"); 
+	   }
+  });
+
+}
+
+
+
+</script>
+
+
+</body>
+</html>

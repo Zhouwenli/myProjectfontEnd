@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>接口测试平台</title>
+</head>
+<body>
+<style>
+* {
+  font-family: 'Trebuchet MS';
+  outline: none;
+}
+body {
+  margin: 0;
+}
+h1 {
+  -webkit-user-select: none;
+  padding: 0.5em 20%;
+  background-color: rgba(140, 140, 140, .8);
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  white-space: nowrap;
+  cursor: default;
+}
+h1::after {
+  content: '(可自选地址进行测试)';
+  font-size: .5em;
+  margin-left: 1em;
+}
+.div{
+	width: 100%;
+	float:left;
+	padding:60px 0 0 0;
+}
+.list{
+	width: 100%;
+}
+.list ul{
+	width: 50%;
+	margin: 10px 0 10px 0;
+}
+.list li{
+	 list-style: none;
+	 padding: 10px;
+	 border: 1px solid #00BFFF;
+	 cursor: pointer;
+}
+
+</style>
+
+
+<h1>接口测试工具</h1>
+<div class="div">
+
+
+<br>
+
+<div class="list">
+    <ul>
+        <li onclick="window.location.href = 'test.html'">本地测试</li>
+        <li onclick="window.location.href = 'cashier_test.html'">收银台测试</li>
+        <li onclick="window.location.href = 'alipay_test.html'">支付宝回调测试</li>
+		<li onclick="window.location.href = 'upLoad.html'">图片上传</li>
+		
+    </ul>
+
+</div>
+
+<script src="./js/jquery-1.10.2.min.js"></script>
+<script>
+
+var share = require("./views/js/share.js");
+
+var 地址 = localStorage.getItem("url");
+if(地址 == '' || 地址 == null)
+{
+地址 = 'http://127.0.0.1:8080/api.post';
+}
+$("#url").val(地址);
+
+function  iffrom(con){
+	var reg=new RegExp("\n","g");
+	var newstr=con.replace(reg,'","');   
+	reg=new RegExp("=","g");
+	newstr=newstr.replace(reg,'":"');
+	newstr='{"'+newstr+'"}';
+	return newstr;
+}
+
+function su(){
+  var url = $("#url").val();
+  var func = $("#func").val();
+  var text = $("#son_con").val();
+  
+  if(url == ''){
+	alert("请填写地址");
+	$("#url").focus();
+	return false;
+  }
+  if(func == ''){
+	alert("请填写func");
+	$("#func").focus();
+	return false;
+  }
+  if(text == ''){
+	alert("请填写内容");
+	$("#text").focus();
+	return false;
+  }
+  localStorage.setItem("url",url);
+  share.form_su(url,iffrom(text),func,function(result){
+	   if(result._f == "成功"){
+          $("#iframe").html(result.内容);
+	   }
+       else{
+		  $("#iframe").html("请求内容失败"); 
+	   }
+  });
+
+}
+
+
+
+</script>
+
+
+</body>
+</html>
