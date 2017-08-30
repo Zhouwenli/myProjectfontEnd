@@ -1,4 +1,5 @@
 exports.upload = function (req, res) {  
+	//console.log(res)
     var multiparty = require('multiparty'); 
         var form = new multiparty.Form();//新建表单
         //设置编辑
@@ -9,8 +10,11 @@ exports.upload = function (req, res) {
         form.maxFieldsSize = 2*1024*1024; //内存大小
         form.maxFilesSize= 5*1024*1024;//文件字节大小限制，超出会报错err
 
+		console.log(req)
         //表单解析
         form.parse(req, function(err,fields,files) {
+        	console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        	//console.log(req);
             //报错处理
             if(err){
                 console.log(err);
@@ -20,9 +24,9 @@ exports.upload = function (req, res) {
             }
 
             //获取路径
-            console.log(files)
+            //console.log(files)
             var oldpath=files.pic[0]['path'];
-            console.log(oldpath)
+            //console.log(oldpath)
 
             //文件后缀处理格式
             if(oldpath.indexOf('.jpg')>=0){
@@ -38,6 +42,7 @@ exports.upload = function (req, res) {
             }
 
             var url='public/upload/'+Date.now()+suffix;
+            //console.log(url)
             var fs=require('fs');
             //给图片修改名称
             fs.renameSync(oldpath,url);
