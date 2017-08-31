@@ -79,7 +79,7 @@
 		<div id="shopList">
 			<ul>
 				
-				<li><img src="images/shopList1.jpg" alt="" /><p class="shopName">哈哈哈哈</p></li>
+				<!--<li><img src="images/shopList1.jpg" alt="" /><p class="shopName">哈哈哈哈</p></li>-->
 				
 				
 			</ul>
@@ -110,6 +110,9 @@
 		<script src="dist/idangerous.swiper.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="index.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
+		
+			
+			
 			$.ajax({
 				url: "/zwl",
 				type: "POST",
@@ -121,13 +124,31 @@
 					console.log(json[0]);
 					var liList='';
 					for(var i=0;i<json.length;i++){
-						liList+='<li><img src="images/'+json[i].img+'" alt="" /><p class="shopName">'+json[i].shopName+'</p></li>';
+						liList+='<li><img src="upload/1503133297520.jpg"  data-src="upload/'+json[i].img+'" alt="" /><p class="shopName">'+json[i].shopName+'</p></li>';
 					}
 					$("#shopList ul").append(liList);
-					
+						var n = 0,
+					        imgNum = $("#shopList ul li img").length,
+					        img = $("#shopList ul li img");
+					        console.log(imgNum+"======")
+					    lazyload();
+					    $(window).scroll(lazyload);
+					    function lazyload(event) {
+					        for (var i = n; i < imgNum; i++) {
+					            if (img.eq(i).offset().top < parseInt($(window).height()) + parseInt($(window).scrollTop())) {
+					                if (img.eq(i).attr("src") == "upload/1503133297520.jpg") {
+					                    var src = img.eq(i).attr("data-src");
+					                    img.eq(i).attr("src", src);
+					                    n = i + 1;
+					                }
+					            }
+					        }
+					    }
 					
 				}
 			});	
+			
+			
 			$(".upload").on("click",function(){
 				window.location.href="/upLoad.html";
 			})
