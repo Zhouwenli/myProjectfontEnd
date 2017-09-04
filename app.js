@@ -10,7 +10,8 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 //文件上传
 var upload = require('./routes/upload');  
- 
+ //朋友圈
+ var parQuan=require('./routes/parQuan');  
 
 //添加的
 var session=require('express-session');
@@ -44,6 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 //app.use('/users', users);
 app.post('/zwl',users.zwl);
+app.post('/parQuan',parQuan.parQuan);
 //文件上传
 app.post('/upload', upload.upload); 
 // catch 404 and forward to error handler

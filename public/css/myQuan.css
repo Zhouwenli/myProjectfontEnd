@@ -1,0 +1,72 @@
+.myQuan{
+	width: 7.2rem;
+	margin: 0 auto;
+}
+.myQuan .headQuan{
+	width: 7.2rem;
+	height: 4rem;
+	position: relative;
+}
+.myQuan .headQuan img{
+	width: 7.2rem;
+	height: 4rem;
+}
+.myQuan .headImg{
+	width: 1rem;
+	height: 1rem;
+	position: absolute;
+	z-index: 111;
+	right: 0.2rem;
+	top: 3.5rem;
+}
+.myQuan .headImg img{
+	width: 1rem;
+	height: 1rem;
+	
+}
+.myQuan .quanList{
+	width: 7rem;
+	margin: 0 auto;
+}
+.quanList ul .quanListLi{
+	width: 7rem;
+	margin-bottom: 0.2rem;
+}
+.quanList ul .quanListLi p img{
+	width: 0.6rem;
+	height: 0.6rem;
+	margin-top: 0.2rem;
+}
+.quanList ul .quanListLi p span{
+	font-size: 0.32rem;
+	display: inline-block;
+	height: 1rem;
+	line-height: 1rem;
+	padding-left: 0.2rem;
+	color: #333;
+}
+.quanList ul .quanListLi .quanIntro{
+	font-size: 0.32rem;
+	color: #333;
+	padding-left: 0.8rem;
+}
+.quanList ul .quanListLi .imgList{
+	width: 6.2rem;
+	margin: 0 auto;
+}
+.quanList ul .quanListLi .imgList ul{
+	width: 6.2rem;
+}
+.quanList ul .quanListLi .imgList ul li{
+	width: 2rem;
+	height: 2rem;
+	float: left;
+	margin-top: 0.2rem;
+	margin-right: 0.05rem;
+	overflow: hidden;
+}
+.quanList ul .quanListLi .imgList ul li img{
+	width: 2rem;
+	height: 2rem;
+	
+}

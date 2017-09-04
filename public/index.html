@@ -86,7 +86,7 @@
 		</div>
 		<footer>
 			<ul>
-				<li class="footerLi">
+				<li class="footerLi indexPage">
 					<img src="images/all.png"/>
 					<span>首页</span>
 				</li>
@@ -98,7 +98,7 @@
 					<img src="images/pin.png"/>
 					<span>消息</span>
 				</li>
-				<li class="footerLi">
+				<li class="footerLi myQuan">
 					<img src="images/account.png"/>
 					<span>我的</span>
 				</li>
@@ -111,7 +111,9 @@
 		<script src="index.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 		
-			
+			/**
+			 * 懒加载
+			 */
 			
 			$.ajax({
 				url: "/zwl",
@@ -148,14 +150,19 @@
 				}
 			});	
 			
-			
+			$(".indexPage").on("click",function(){
+				window.location.href="/index.html";
+			});
 			$(".upload").on("click",function(){
 				window.location.href="/upLoad.html";
 			})
 			
 			$(".photo").on("click",function(){
 				window.location.href="/photo.html";
-			})
+			});
+			$(".myQuan").on("click",function(){
+				window.location.href="/myQuan.html";
+			});
 			
 		</script>
 		

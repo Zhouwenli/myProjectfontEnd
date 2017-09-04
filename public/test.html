@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<div id="eq"></div>
+		<div class="a">哈哈哈哈</div>
+		<div class="a">哈哈哈哈</div>
+		<div class="a">哈哈哈哈</div>
+		<div class="a">哈哈哈哈</div>
+		<div class="a">哈哈哈哈</div>
+		
+		<script type="text/javascript">
+//			var Calculator=function(eq){
+//				var eqCtl=document.getElementById(eq);
+//				return{
+//					//暴露公开的成员
+//					add:function(x,y){
+//						var val=x+y;
+//						eqCtl.innerHTML=val;
+//					}
+//				}
+//			}
+//			var calculator=new Calculator('eq');
+//			calculator.add(2,2);
+//			
+			/**
+			 * *************************************************
+			 * *************************************************
+			 */
+			var blogModule = (function () {
+			    var my = {}, privateName = "博客园";
+			
+			    function privateAddTopic(data) {
+			        // 这里是内部处理代码
+			    }
+			
+			    my.Name = privateName;
+			    my.AddTopic = function (data) {
+			        privateAddTopic(data);
+			    };
+				console.log(my)
+			    return my;
+			} ());
+			console.log(blogModule);
+			/**
+			 * *************************************************
+			 * *************************************************
+			 */
+			function makeCounter() {
+			    // 只能在makeCounter内部访问i
+			    var i = 0;
+			
+			    return function () {
+			        console.log(++i);
+			    };
+			}
+			var counter = makeCounter();
+			counter();
+			
+			/**
+			 * 匿名加闭包
+			 */
+			
+			var elems = document.getElementsByTagName('div');
+
+			for (var i = 0; i < elems.length; i++) {
+			
+			    elems[i].addEventListener('click', (function (i) {
+			        return function (e) {
+			            e.preventDefault();
+			            alert('I am link #' + i);
+			        };
+			    })(i), 'false');
+			
+			}
+			
+//			var elems=document.getElementsByName('div');
+//			for(var i=0;i<elems.length;i++){
+//				elems[i].addEventListener('click',(function(lockedInIndex){
+//					return function(e){
+//						e.preventDefault();
+//						alert(lockedInIndex);
+//					}
+//				})(i),'false');
+//			}
+			
+			/**
+			 * 使用javascript原型
+			 */
+			/*
+			 * 简单方式
+			 */
+			 var  decimalDigits=2,
+			 	  tax=5;
+			 function add(x,y){
+			 	return x+y;
+			 }
+			 function subtract(x,y){
+			 	return x-y;
+			 }
+//			 alert(add(1,3));
+			 
+			 /**
+			  * 原型方式1
+			  */
+			 var Calculator=function(decimalDigits,tax){
+			 	this.decimalDigits=decimalDigits;
+			 	this.tax=tax;
+			 }
+			 Calculator.prototype={
+			 	add:function(x,y){
+			 		return x+y;
+			 	},
+			 	subtract:function(x,y){
+			 		return x-y;
+			 	}
+			 }
+			 alert((new Calculator()).add(1, 3));
+			 
+			 Calculator.prototype=function(){
+			 	add=function(x,y){
+			 		return x+y;
+			 	},
+			 	subtract=function(x,y){
+			 		return x-y;
+			 	}
+			 	return{
+			 		add:add,
+			 		subtract:subtract
+			 	}
+			 }();
+			 
+			 /**
+			  * 分步声明原型
+			  */
+			 var BaseCalculator=function(){
+			 	this.decimalDigits=2;
+			 };
+			 
+			 //使用原型BaseCalculator扩展2个对象
+			 BaseCalculator.prototype.add=function(x,y){
+			 	return x+y;
+			 };
+			 BaseCalculator.prototype.subtract=function(x,y){
+			 	return x-y;
+			 };
+			 
+			 
+			 var BaseCalculator = function() {
+				    this.decimalDigits = 2;
+				};
+				
+				BaseCalculator.prototype = {
+				    add: function(x, y) {
+				        return x + y;
+				    },
+				    subtract: function(x, y) {
+				        return x - y;
+				    }
+				};
+		</script>
+	</body>
+</html>

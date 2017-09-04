@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<script src="util.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/myQuan.css"/>
+		<title>我的朋友圈</title>
+	</head>
+	<body>
+		<div class="myQuan">
+			<div class="headQuan">
+				<img src="upload/1503279089452.jpg"/>
+				<div class="headImg">
+					<img src="upload/1503992129567.png"/>
+				</div>
+			</div>
+			<div class="quanList">
+				<ul>
+					<!--<li class="quanListLi">
+						<p><img src="upload/1503992198292.png"/><span>敲木鱼</span></p>
+						<p class="quanIntro">今天天气不错，晒一几张照片</p>
+						<div class="imgList">
+							<ul>
+								<li><img src="upload/1503133297520.jpg"/></li>
+								<li><img src="upload/1503133297520.jpg"/></li>
+								<li><img src="upload/1503133297520.jpg"/></li>
+								<li><img src="upload/1503133297520.jpg"/></li>
+								<div class="clear"></div>
+							</ul>
+						</div>
+						
+					</li>
+					<li class="quanListLi">
+						<p><img src="upload/1503992198292.png"/><span>敲木鱼</span></p>
+						<p class="quanIntro">今天天气不错，晒一几张照片</p>
+						<div class="imgList">
+							<ul>
+								<li><img src="upload/1503133297520.jpg"/></li>
+								<li><img src="upload/1503133297520.jpg"/></li>
+								<li><img src="upload/1503133297520.jpg"/></li>
+								<li><img src="upload/1503133297520.jpg"/></li>
+								<div class="clear"></div>
+							</ul>
+						</div>
+					</li>
+					<li class="quanListLi">
+						<p><img src="upload/1503992198292.png"/><span>敲木鱼</span></p>
+						<p class="quanIntro">今天天气不错，晒一几张照片</p>
+						<div class="imgList">
+							<ul>
+								<li><img src="upload/1503133297520.jpg"/></li>
+								<li><img src="upload/1503133297520.jpg"/></li>
+								<li><img src="upload/1503133297520.jpg"/></li>
+								<li><img src="upload/1503133297520.jpg"/></li>
+								<div class="clear"></div>
+							</ul>
+						</div>
+					</li>-->
+					
+				</ul>
+			</div>
+			
+		</div>
+		<script src="jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var data={};
+			data.parQuan='15874709296';
+			data=JSON.stringify(data);
+			$.ajax({
+				url: "/parQuan",
+				type: "POST",
+				data:'data='+data,
+				success: function(json){
+					console.log(json);
+					if(json.状态=='成功'){
+						var listLi='';
+						
+						for(var i=0;i<json.列表.length;i++){
+							var imgList='';
+							var imgL=json.列表[i].img.split(",");
+							listLi+='<li class="quanListLi">'+
+									'<p><img src="upload/1503992198292.png"/><span>'+json.列表[i].username+'</span></p>'+
+									'<p class="quanIntro">今天天气不错，晒一几张照片</p>';
+									for(var j=0;j<imgL.length;j++){
+										imgList+='<li><img src="images/'+imgL[j]+'"/></li>';
+									
+									
+									}
+								listLi+='<div class="imgList"><ul>'+imgList+'<div class="clear"></div></ul></div></li>';
+									
+						}
+						$(".quanList ul").append(listLi);
+//						$(".imgList ul").append(imgList+"<div class='clear'></div>");
+					}
+				}
+			});	
+		</script>
+	</body>
+</html>
