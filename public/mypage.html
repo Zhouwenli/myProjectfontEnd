@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<script src="util.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mypage.css"/>
+	</head>
+	<body>
+		<div class="login-content">
+			<div class="login-head">
+				<img src="images/shopList2.jpg"/>
+			</div>
+			<div class="longin-bor">
+				<p><label for="">用户名:</label><input type="text" name="" id="username" value="" placeholder="请输入您的用户名"/></p>
+				<p><label for="">密&nbsp;&nbsp;&nbsp;码:</label><input type="password" name="" id="password" value="" placeholder="请输入您的登录密码"/></p>
+			</div>
+			<div id="loginbatn">
+				登录
+			</div>
+		</div>
+		<script src="jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("#loginbatn").on("click",function(){
+				logins();
+			});
+			function logins(){
+				var data={};
+				data.username=$("#username").val();
+				data.password=$("#password").val();
+				data=JSON.stringify(data);
+				$.ajax({
+					url: "/login",
+					type: "POST",
+					data:'data='+data,
+					success: function(json){
+						console.log(json)
+					}
+				});	
+			}
+			
+		</script>
+	</body>
+</html>

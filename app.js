@@ -45,6 +45,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 //app.use('/users', users);
 app.post('/zwl',users.zwl);
+
+//登录
+app.post('/login',users.login);
+
 app.post('/parQuan',parQuan.parQuan);
 //文件上传
 app.post('/upload', upload.upload); 

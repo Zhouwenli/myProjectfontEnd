@@ -1,0 +1,43 @@
+body{
+	background-image: url(../images/bg2.jpg);
+	background-size: cover;
+}
+.login-content{
+	width: 7.2rem;
+	margin: 2rem auto;
+}
+.login-content .login-head{
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 2rem;
+	margin: 1rem auto;
+}
+.login-content .login-head img{
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 2rem;
+}
+.login-content .longin-bor{
+	font-size: 0.32rem;
+}
+.login-content .longin-bor p{
+	padding: 0.3rem 0.7rem 0 0.7rem;
+}
+.login-content .longin-bor p input{
+	width: 4rem;
+	height: 0.5rem;
+	font-size: 0.3rem;
+	margin-left: 0.3rem;
+	text-indent: 0.1rem;
+	outline: none;
+	border: none;
+}
+#loginbatn{
+	width: 3rem;
+	height: 0.7rem;
+	line-height: 0.7rem;
+	margin: 0.7rem auto;
+	font-size: 0.32rem;
+	text-align: center;
+	background-color: #cdc8c8;
+}

@@ -24,3 +24,18 @@ exports.zwl = function(req, res){
       //
    });
 };
+exports.login=function(req,res){
+	   res.setHeader('Content-Type', 'application/json;charset=utf-8');
+	   console.log(req.body)
+	   var datas=JSON.parse(req.body.data);
+	   var username=datas.username;
+	   var password=datas.password;
+	   console.log(username+"====================="+password)
+	   var querysql="select * from userzhou where username=?"
+	   var params=username;
+	   var queryResult=dao.query(querysql,params,function(result){
+	   		console.log(result);
+	   		res.send(result);
+	   });
+};
+// module.exports = router;
