@@ -231,39 +231,3 @@
 	padding: 0.1rem 0.23rem;
 }
 
-/**
- * 底部
- */
-footer{
-	width: 7.2rem;
-	height: 1rem;
-	margin: 0 auto;
-	bottom: 0;
-	position: fixed;
-	background-color: #fff;
-}
-footer ul{
-	width: 7.2rem;
-	height: 1rem;
-	display: -webkit-flex; /* Safari */
-  display: flex;
-}
-footer ul .footerLi{
-	width: 1.8rem;
-	height: 1rem;
-	
-	
-	
-}
-footer ul .footerLi img{
-	width: 0.55rem;
-	display: inline-block;
-	margin: 0 0.625rem;
-}
-footer ul .footerLi span{
-	width: 1.8rem;
-	padding-top: 0.1rem;
-	text-align: center;
-	display: inline-block;
-	font-size: 0.32rem;
-}

@@ -33,9 +33,23 @@ exports.login=function(req,res){
 	   console.log(username+"====================="+password)
 	   var querysql="select * from userzhou where username=?"
 	   var params=username;
+	    var p={};
 	   var queryResult=dao.query(querysql,params,function(result){
-	   		console.log(result);
-	   		res.send(result);
+	   	if(result.length>0){
+	   		console.log("=========================")
+	   		console.log(result[0].password)
+	   		 if(password == result[0].password){
+	   		 	
+	   		 	 p.staus="成功";
+	   		 }else{
+	   		 	 p.staus="失败";
+	   		 	 p.result="密码错误！"
+	   		 }
+	   		
+	   	}else{
+	   		 p.staus="用户名不存在"
+	   	}
+	   		 res.send(p);
 	   });
 };
 // module.exports = router;

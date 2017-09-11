@@ -5,6 +5,8 @@
 		<link rel="stylesheet" type="text/css" href="css/common.css"/>
 		<script src="util.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="css/myQuan.css"/>
+		<link rel="stylesheet" type="text/css" href="publicCss/public.css"/>
+		<link rel="stylesheet" type="text/css" href="fontIcon/iconfont.css"/>
 		<title>我的朋友圈</title>
 	</head>
 	<body>
@@ -62,8 +64,41 @@
 			</div>
 			
 		</div>
+		<footer>
+			<ul>
+				<li class="footerLi indexPage">
+					<span class="icon-home iconfont"></span>
+					主页
+				</li>
+				<li class="footerLi upload">
+					<span class="icon-guanli iconfont"></span>
+					管理
+				</li>
+				<li class="footerLi photo">
+					<span class="icon-pengyouquan1 iconfont"></span>
+					朋友圈
+				</li>
+				<li class="footerLi myQuan">
+					<span class="icon-yonghu iconfont"></span>
+					我
+				</li>
+			</ul>
+		</footer>
 		<script src="jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
+			$(".indexPage").on("click",function(){
+				window.location.href="/index.html";
+			});
+			$(".upload").on("click",function(){
+				window.location.href="/upLoad.html";
+			})
+			
+			$(".photo").on("click",function(){
+				window.location.href="/myQuan.html";
+			});
+			$(".myQuan").on("click",function(){
+				window.location.href="/mypage.html";
+			});
 			console.log("=======")
 			var data={};
 			data.parQuan='15874709296';
