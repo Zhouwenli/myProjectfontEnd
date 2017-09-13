@@ -41,3 +41,11 @@ body{
 	text-align: center;
 	background-color: #cdc8c8;
 }
+.defeat{
+	padding: 0.3rem 0.5rem;
+	color: #D74747;
+}
+#uploadDiv{
+	width: 7.2rem;
+	margin: 0 auto;
+}

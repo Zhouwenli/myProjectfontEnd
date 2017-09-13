@@ -1,0 +1,31 @@
+/**
+ * 底部
+ */
+footer{
+	width: 7.2rem;
+	height: 1rem;
+	margin: 0 auto;
+	bottom: 0;
+	left: 50%;
+	margin-left: -3.6rem;
+	position: fixed;
+	background-color: #fff;
+}
+footer ul{
+	width: 7.2rem;
+	height: 1rem;
+	display: -webkit-flex; /* Safari */
+  display: flex;
+}
+footer ul .footerLi{
+	text-align: center;
+	width: 1.8rem;
+	height: 1rem;
+}
+footer ul .footerLi span{
+	width: 0.6rem;
+	height: 0.6rem;
+	margin: 0.05rem auto;
+	display: block;
+}
+

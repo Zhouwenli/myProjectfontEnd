@@ -16,6 +16,7 @@
 			<div class="longin-bor">
 				<p><label for="">用户名:</label><input type="text" name="" id="username" value="" placeholder="请输入您的用户名"/></p>
 				<p><label for="">密&nbsp;&nbsp;&nbsp;码:</label><input type="password" name="" id="password" value="" placeholder="请输入您的登录密码"/></p>
+				<p class="defeat"></p>
 			</div>
 			<div id="loginbatn">
 				登录
@@ -69,8 +70,12 @@
 					type: "POST",
 					data:'data='+data,
 					success: function(json){
+						console.log(json)
 						if(json.staus=="成功"){
+							
 							window.location.href="index.html";
+						}else{
+							$(".defeat").html(json.result);
 						}
 					}
 				});	
