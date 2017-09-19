@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>圆形动态图</title>
+	</head>
+	<body>
+		<script src="d3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var width = 600;
+			var height = 600;
+			
+			//在body里面添加画布
+			var svg = d3.select("body").append("svg").attr("width", width).attr("height", height);
+			
+			var  circle1 =svg.append("circle")
+						  .attr("cx",100)
+						  .attr("cy",100)
+						  .attr("r",30)
+						  .style("fill","green");
+			
+			// 在1秒内将圆心坐标由100变为300
+			circle1.transition().duration(1000).attr("cx",300)
+			.transition().duration(1500).attr("cy",260)
+			.transition().duration(1500).attr("cy",260);
+			
+			var  circle2 =svg.append("circle")
+						  .attr("cx",50)
+						  .attr("cy",50)
+						  .attr("r",30)
+						  .style("fill","red");
+			
+			// 在1秒内将圆心坐标由100变为300
+			circle2.transition().duration(1500).attr("cx",260)
+			.transition().duration(1500).attr("cx",300)
+			.transition().duration(1500).attr("cx",200);
+			var  circle3 =svg.append("circle")
+						  .attr("cx",120)
+						  .attr("cy",6)
+						  .attr("r",30)
+						  .style("fill","yellow");
+			
+			// 在1秒内将圆心坐标由100变为300
+			circle3.transition().duration(1500).attr("cx",260).attr("cy",300)
+					.transition().duration(1500).attr("cx",100).attr("cy",100)
+					.transition().duration(1500).attr("cx",50).attr("cy",100);
+
+		</script>
+	</body>
+</html>
